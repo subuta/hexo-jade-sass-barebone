@@ -1,21 +1,16 @@
-extends layout
+ul.article-list
+  - page.posts.each(function(article){
+    li
+      article
+        h2
+          a(href=config.root + article.path)= article.title
+        div.meta
+          include _partial/article_meta
 
-block content
+          +date(article.date)
 
-  ul.article-list
-    - page.posts.each(function(article){
+          +category(article.categories)
 
-      li
-        article
-          h2
-            a(href=config.root + article.path)= article.title
-          div.meta
-            include _partial/article_meta
+  - })
 
-            +date(article.date)
-
-            +category(article.categories)
-
-    - })
-
-  include _partial/article_list_pagination
+include _partial/article_list_pagination

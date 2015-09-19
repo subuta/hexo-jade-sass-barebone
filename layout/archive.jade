@@ -1,25 +1,18 @@
-extends layout
+header
+  h2 Archive
 
-prepend window_title
-  
-  | Archive&mdash;
+ul.article-list
+  - page.posts.each(function(article){
 
-block content
-  header
-    h2 Archive
+    li
+      article
+        h3
+          a(href=config.root + article.path)= article.title
+        div.meta
+          include _partial/article_meta
 
-  ul.article-list
-    - page.posts.each(function(article){
+          +date(article.date)
 
-      li
-        article
-          h3
-            a(href=config.root + article.path)= article.title
-          div.meta
-            include _partial/article_meta
+          +category(article.categories)
 
-            +date(article.date)
-
-            +category(article.categories)
-
-    - })
+  - })

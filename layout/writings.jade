@@ -1,20 +1,12 @@
-extends layout
+article(class=page.layout)
+  h2= page.title
+  div.meta
+    include _partial/article_meta
 
-prepend window_title
-  
-  = page.title
-  &mdash;
+    +date(page.date)
 
-append content
-  article(class=page.layout)
-    h2= page.title
-    div.meta
-      include _partial/article_meta
+    +category(page.categories)
 
-      +date(page.date)
+  != page.content
 
-      +category(page.categories)
-    
-    != page.content
-
-  include _partial/article_pagination
+include _partial/article_pagination

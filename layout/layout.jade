@@ -12,6 +12,6 @@ html(lang='en')
             a(href=config.root)= config.title
           p#site-slogan= config.subtitle
     section#content
-      block content
+      != body
     footer#page-footer
       include _partial/footer
