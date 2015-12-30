@@ -12,8 +12,11 @@ npm install hexo-renderer-jade --save
 npm install hexo-renderer-sass --save
 ```
 
-Clone this repository to your Hexo themes folder and modify `theme` in `_config.yml` to `jade-barebone`.
+Clone this repository to your Hexo themes folder and modify `theme` in `_config.yml` to `jade-sass-barebone`.
 
 ```shell
 git clone git://github.com/subuta/hexo-jade-sass-barebone.git themes/jade-sass-barebone
 ```
+
+## License
+[The MIT License (MIT)](https://opensource.org/licenses/MIT)
